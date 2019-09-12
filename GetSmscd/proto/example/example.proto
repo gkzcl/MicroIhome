@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package go.micro.srv.GetSmscd;
+
+service Example {
+	rpc GetSmscd(Request) returns (Response) {}
+}
+
+message Message {
+	string say = 1;
+}
+
+message Request {
+	//手机号
+	string mobile =1 ;
+	//图片验证码的值
+	string imagestr =2 ;
+	//uuid
+	string uuid =3 ;
+}
+
+message Response {
+	string Error = 1;
+	string ErrMsg = 2;
+}
